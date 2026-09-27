@@ -366,9 +366,16 @@ h2 em {
   overflow: hidden;
   border: 8px solid var(--primary-dark);
   border-radius: 42px;
-  background: #fbfaf7;
+  background: #f6f1eb;
   box-shadow: 0 32px 70px rgba(36, 56, 47, 0.25), 0 4px 0 #17251f;
   transform: rotate(2.2deg);
+}
+
+.phone img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .phone::before {
@@ -382,266 +389,6 @@ h2 em {
   transform: translateX(-50%);
   border-radius: 20px;
   background: var(--primary-dark);
-}
-
-.phone-top {
-  height: 34px;
-  padding: 8px 15px 0;
-  display: flex;
-  justify-content: space-between;
-  color: var(--text);
-  font-size: 8px;
-  font-weight: 700;
-}
-
-.phone-top i {
-  width: 80px;
-}
-
-.phone-top .status {
-  letter-spacing: 1px;
-}
-
-.app-head {
-  height: 48px;
-  padding: 4px 15px 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.app-brand {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--primary-dark);
-  font: 800 15px/1 'Manrope', sans-serif;
-}
-
-.app-brand img {
-  width: 25px;
-  height: 25px;
-  border-radius: 7px;
-}
-
-.round-icon {
-  width: 27px;
-  height: 27px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  color: var(--primary);
-  background: white;
-}
-
-.round-icon .icon {
-  width: 13px;
-}
-
-.app-content {
-  padding: 5px 15px 65px;
-}
-
-.app-greeting {
-  display: flex;
-  flex-direction: column;
-  margin: 4px 0 14px;
-}
-
-.app-greeting small,
-.product-card small {
-  color: var(--muted-text);
-  font-size: 8px;
-}
-
-.app-greeting strong {
-  margin-top: 3px;
-  font: 700 18px/1.2 'Manrope', sans-serif;
-  letter-spacing: -0.6px;
-}
-
-.search-bar {
-  height: 36px;
-  padding: 0 11px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  color: #89918d;
-  background: white;
-  font-size: 9px;
-}
-
-.search-bar .icon {
-  width: 13px;
-  color: var(--primary);
-}
-
-.category-row {
-  margin: 11px -1px 15px;
-  display: flex;
-  gap: 6px;
-}
-
-.category-row span {
-  white-space: nowrap;
-  padding: 6px 9px;
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  color: var(--muted-text);
-  background: white;
-  font-size: 7px;
-  font-weight: 600;
-}
-
-.category-row span:first-child {
-  border-color: var(--primary);
-  color: white;
-  background: var(--primary);
-}
-
-.listing-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 9px;
-}
-
-.listing-head strong {
-  font-size: 11px;
-}
-
-.listing-head small {
-  color: var(--primary);
-  font-size: 7px;
-  font-weight: 700;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.product-card {
-  min-width: 0;
-  padding: 6px 6px 9px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  border: 1px solid #eee9e1;
-  border-radius: 12px;
-  background: white;
-}
-
-.product-image {
-  height: 126px;
-  position: relative;
-  margin-bottom: 5px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.saddle {
-  background: linear-gradient(145deg, #e2d2c1, #f2e9df);
-}
-
-.helmet {
-  background: linear-gradient(145deg, #d9e4de, #edf2ef);
-}
-
-.saddle-art,
-.helmet-art {
-  color: #6d4a36;
-  font-family: Georgia, serif;
-  font-size: 72px;
-  filter: drop-shadow(0 8px 6px rgba(65, 45, 32, 0.16));
-  transform: rotate(-8deg);
-}
-
-.helmet-art {
-  color: #334b42;
-  font-size: 84px;
-  transform: rotate(-12deg);
-}
-
-.heart-dot {
-  width: 22px;
-  height: 22px;
-  position: absolute;
-  z-index: 2;
-  top: 6px;
-  right: 6px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  color: var(--primary);
-  background: rgba(255, 255, 255, 0.86);
-  font-size: 13px;
-}
-
-.product-card strong {
-  overflow: hidden;
-  font-size: 9px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.product-card b {
-  margin-top: 3px;
-  color: var(--primary);
-  font-size: 9px;
-}
-
-.app-nav {
-  height: 58px;
-  position: absolute;
-  z-index: 6;
-  inset: auto 0 0;
-  padding: 7px 10px 6px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-top: 1px solid #eee9e1;
-  background: rgba(255, 255, 255, 0.96);
-}
-
-.app-nav > span:not(.sell-button) {
-  min-width: 42px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  color: #909793;
-}
-
-.app-nav .icon {
-  width: 15px;
-}
-
-.app-nav small {
-  font-size: 5.5px;
-}
-
-.app-nav .active {
-  color: var(--primary) !important;
-}
-
-.sell-button {
-  width: 38px;
-  height: 38px;
-  margin-top: -20px;
-  display: grid;
-  place-items: center;
-  border: 3px solid white;
-  border-radius: 50%;
-  color: white;
-  background: var(--primary);
-  box-shadow: 0 5px 12px rgba(49, 92, 76, 0.25);
 }
 
 .floating-card {
@@ -783,6 +530,15 @@ h2 em {
   border-radius: var(--radius);
   background: #fdfcf9;
   transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.step-shot {
+  width: 100%;
+  margin-top: 22px;
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #f6f1eb;
 }
 
 .step-card:hover {
@@ -1014,7 +770,9 @@ h2 em {
 }
 
 .safe-seal > span {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 800;
 }
 
 .safe-seal strong {
@@ -1092,29 +850,126 @@ h2 em {
 
 .chat-demo {
   position: absolute;
+  top: 50%;
   right: 40px;
-  bottom: 35px;
-  width: 43%;
+  width: min(43%, 420px);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 18px 40px rgba(36, 56, 47, 0.1);
+  transform: translateY(-50%) rotate(-1.5deg);
+}
+
+.chat-head {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.chat-thumb {
+  width: 34px;
+  height: 34px;
+  flex: none;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.chat-head div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.chat-head strong {
+  font-size: 12px;
+}
+
+.chat-head small {
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.chat-body {
+  padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 9px;
+  background: #fbf8f3;
 }
 
-.chat-demo span {
-  padding: 12px 15px;
+.chat-body > span {
+  max-width: 80%;
+  padding: 10px 14px;
   border-radius: 14px 14px 14px 3px;
   color: var(--text);
   background: white;
-  box-shadow: 0 8px 22px rgba(36, 56, 47, 0.08);
-  font-size: 10px;
+  box-shadow: 0 4px 12px rgba(36, 56, 47, 0.06);
+  font-size: 11px;
 }
 
-.chat-demo span:last-child {
+.chat-body .out {
   align-self: flex-end;
   border-radius: 14px 14px 3px;
   color: white;
   background: var(--primary);
+}
+
+.chat-body .bid {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--primary-light);
+}
+
+.chat-body .bid > .icon {
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  border-radius: 8px;
+  color: white;
+  background: var(--primary);
+}
+
+.chat-body .bid span {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-body .bid small {
+  color: var(--muted-text);
+  font-size: 9px;
+}
+
+.chat-body .bid strong {
+  font-size: 13px;
+}
+
+.chat-input {
+  margin: 0 12px 12px;
+  padding: 6px 6px 6px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  color: var(--muted-text);
+  font-size: 11px;
+}
+
+.chat-input i {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: var(--primary);
+  font-size: 13px;
 }
 
 .planet-section {
@@ -1776,6 +1631,11 @@ footer .brand {
     min-height: 280px;
   }
 
+  .step-shot {
+    max-width: 340px;
+    margin-inline: auto;
+  }
+
   .feature-large {
     min-height: auto;
     grid-column: auto;
@@ -1794,13 +1654,16 @@ footer .brand {
 
   .message-card {
     grid-column: auto;
-    min-height: 390px;
+    min-height: 0;
   }
 
   .chat-demo {
-    width: auto;
-    left: 34px;
-    right: 34px;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin-top: 24px;
+    transform: none;
   }
 
   .planet-section {

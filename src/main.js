@@ -8,6 +8,11 @@ import '@fontsource/manrope/latin-700.css'
 import '@fontsource/manrope/latin-800.css'
 import './style.css'
 import brandIcon from './assets/android-icon-equilo.png'
+import browseScreen from './assets/screens/browse.jpg'
+import stepPhotos from './assets/screens/step-photos.jpg'
+import stepListings from './assets/screens/step-listings.jpg'
+import stepOffers from './assets/screens/step-offers.jpg'
+import chatThumb from './assets/screens/chat-thumb.jpg'
 import { siteConfig } from './config.js'
 
 const { name, tagline, description, links, contact, colors } = siteConfig
@@ -27,6 +32,7 @@ const icon = (name, className = '') => {
     chat: '<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/>',
     leaf: '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5.3 19 2 19 2c1 6-1 15-8 18Z"/><path d="M2 21c0-3 1.9-5.5 5-7"/>',
     camera: '<path d="M14.5 4 16 7h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3l1.5-3Z"/><circle cx="12" cy="13" r="3"/>',
+    tag: '<path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.5"/>',
     user: '<circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/>',
     sparkle: '<path d="m12 3 1.3 4.2L17.5 9l-4.2 1.7L12 15l-1.3-4.3L6.5 9l4.2-1.8Z"/><path d="m19 15 .7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7Z"/>',
     menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
@@ -110,7 +116,7 @@ document.querySelector('#app').innerHTML = `
           </div>
           <div class="hero-proof">
             <div class="avatar-stack" aria-hidden="true">
-              <span>${icon('heart')}</span><span>${icon('shield')}</span><span>${icon('leaf')}</span>
+              <span>${icon('heart')}</span><span>${icon('user')}</span><span>${icon('leaf')}</span>
             </div>
             <div><strong>Lavet til ryttere</strong><small>Nemt, overskueligt og helt nede på jorden</small></div>
           </div>
@@ -118,36 +124,9 @@ document.querySelector('#app').innerHTML = `
 
         <div class="phone-stage reveal reveal-delay">
           <div class="orbit orbit-one"><span>${icon('heart')}</span></div>
-          <div class="orbit orbit-two"><span>${icon('shield')}</span></div>
-          <div class="phone" aria-label="Eksempel på Tackly appen">
-            <div class="phone-top"><span>9:41</span><i></i><span class="status">● ◒</span></div>
-            <div class="app-head">
-              <div class="app-brand"><img src="${brandIcon}" alt="" /><strong>${name}</strong></div>
-              <span class="round-icon">${icon('heart')}</span>
-            </div>
-            <div class="app-content">
-              <div class="app-greeting"><small>Godmorgen</small><strong>Find dit næste kup</strong></div>
-              <div class="search-bar">${icon('search')} <span>Søg efter udstyr...</span></div>
-              <div class="category-row"><span>Alt</span><span>Til hesten</span><span>Til rytteren</span></div>
-              <div class="listing-head"><strong>Nyt til dig</strong><small>Se alle</small></div>
-              <div class="product-grid">
-                <article class="product-card">
-                  <div class="product-image saddle"><span class="heart-dot">♡</span><div class="saddle-art">♞</div></div>
-                  <small>Stübben</small><strong>Dressursadel</strong><b>4.200 kr.</b>
-                </article>
-                <article class="product-card">
-                  <div class="product-image helmet"><span class="heart-dot">♡</span><div class="helmet-art">◒</div></div>
-                  <small>Samshield</small><strong>Ridehjelm</strong><b>1.150 kr.</b>
-                </article>
-              </div>
-            </div>
-            <div class="app-nav">
-              <span class="active">${icon('search')}<small>Opdag</small></span>
-              <span>${icon('heart')}<small>Favoritter</small></span>
-              <span class="sell-button">${icon('plus')}</span>
-              <span>${icon('chat')}<small>Beskeder</small></span>
-              <span>${icon('user')}<small>Profil</small></span>
-            </div>
+          <div class="orbit orbit-two"><span>${icon('leaf')}</span></div>
+          <div class="phone">
+            <img src="${browseScreen}" alt="Tackly appen: find brugt rideudstyr fra ryttere i hele Danmark" />
           </div>
           <div class="floating-card floating-sale"><span>${icon('sparkle')}</span><div><strong>Solgt!</strong><small>Dit dækken har fundet et nyt hjem</small></div></div>
           <div class="floating-card floating-rating"><span>★</span><div><strong>En god handel</strong><small>5,0 fra en glad rytter</small></div></div>
@@ -169,18 +148,21 @@ document.querySelector('#app').innerHTML = `
             <div class="step-icon peach">${icon('camera')}</div>
             <h3>Opret din annonce</h3>
             <p>Tag et par billeder, beskriv dit udstyr og vælg en pris. Så er du live.</p>
+            <img class="step-shot" src="${stepPhotos}" alt="Tilføj op til 5 billeder af varen" loading="lazy" />
           </article>
           <article class="step-card reveal reveal-delay-short">
             <span class="step-number">02</span>
             <div class="step-icon green">${icon('chat')}</div>
             <h3>Find det rette match</h3>
             <p>Gå på opdagelse, gem favoritter og skriv direkte med andre ryttere.</p>
+            <img class="step-shot" src="${stepListings}" alt="Annoncer med pris, titel og placering" loading="lazy" />
           </article>
           <article class="step-card reveal reveal-delay">
             <span class="step-number">03</span>
             <div class="step-icon gold">${icon('sparkle')}</div>
             <h3>Gør en god handel</h3>
-            <p>Aftal detaljerne, og glæd dig til at udstyret får endnu en tur.</p>
+            <p>Vælg fast pris eller åbn for bud. Aftal detaljerne, og glæd dig til at udstyret får endnu en tur.</p>
+            <img class="step-shot" src="${stepOffers}" alt="Vælg mellem fast pris og åben for bud" loading="lazy" />
           </article>
         </div>
       </div>
@@ -206,10 +188,10 @@ document.querySelector('#app').innerHTML = `
             </div>
           </article>
           <article class="feature-card safe-card reveal reveal-delay-short">
-            <div class="feature-icon">${icon('shield')}</div>
-            <h3>En tryg staldgang</h3>
-            <p>Profiler, beskeder og anmeldelser gør det lettere at handle med ro i maven.</p>
-            <div class="safe-seal"><span>${icon('shield')}</span><strong>Trygge handler</strong><small>Mellem rigtige ryttere</small></div>
+            <div class="feature-icon">${icon('user')}</div>
+            <h3>Se hvem du handler med</h3>
+            <p>Profiler, beskeder og anmeldelser giver dig et bedre billede af, hvem der er på den anden side af handlen.</p>
+            <div class="safe-seal"><span>★ 5,0</span><strong>Anmeldelser</strong><small>Fra andre ryttere</small></div>
           </article>
           <article class="feature-card community-card reveal">
             <div class="feature-icon">${icon('heart')}</div>
@@ -220,8 +202,19 @@ document.querySelector('#app').innerHTML = `
           <article class="feature-card message-card reveal reveal-delay-short">
             <div class="feature-icon">${icon('chat')}</div>
             <h3>Snak sammen i appen</h3>
-            <p>Få mål og detaljer på plads, før I laver en aftale.</p>
-            <div class="chat-demo" aria-hidden="true"><span>Hej! Hvad er bomvidden?</span><span>Den er medium – og kun brugt én sæson.</span></div>
+            <p>Stil spørgsmål, få detaljerne på plads, og send bud og modbud direkte i chatten.</p>
+            <div class="chat-demo" aria-hidden="true">
+              <div class="chat-head">
+                <img class="chat-thumb" src="${chatThumb}" alt="" />
+                <div><strong>Mette</strong><small>Flex Hoof boots</small></div>
+              </div>
+              <div class="chat-body">
+                <span class="in">Hej! Er de stadig til salg?</span>
+                <span class="out">Ja! De er kun brugt få gange.</span>
+                <span class="in bid">${icon('tag')}<span><small>Bud</small><strong>800 kr.</strong></span></span>
+              </div>
+              <div class="chat-input"><span>Skriv en besked...</span><i>${icon('arrow')}</i></div>
+            </div>
           </article>
         </div>
       </div>
