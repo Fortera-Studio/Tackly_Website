@@ -1435,6 +1435,16 @@ h2 em {
   transform: translateY(-2px);
 }
 
+.store-button.is-soon {
+  cursor: default;
+  opacity: 0.85;
+}
+
+.store-button.is-soon:hover {
+  background: #18231e;
+  transform: none;
+}
+
 .store-logo {
   width: 26px;
   height: 26px;

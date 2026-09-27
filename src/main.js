@@ -53,10 +53,23 @@ const playLogo = `
 
 const storeButton = (store) => {
   const isApple = store === 'apple'
-  return `
-    <a class="store-button" href="${isApple ? links.appStore : links.googlePlay}" aria-label="Hent Tackly på ${isApple ? 'App Store' : 'Google Play'}">
+  const storeName = isApple ? 'App Store' : 'Google Play'
+  const href = isApple ? links.appStore : links.googlePlay
+
+  // Until a real store URL is set in config.js, show the button as "coming soon".
+  if (href.startsWith('#')) {
+    const label = isApple ? 'Kommer senere til' : 'Kommer snart til'
+    return `
+    <span class="store-button is-soon" aria-label="Tackly ${label.toLowerCase()} ${storeName}">
       ${isApple ? appleLogo : playLogo}
-      <span><small>${isApple ? 'Hent i' : 'Hent den på'}</small><strong>${isApple ? 'App Store' : 'Google Play'}</strong></span>
+      <span><small>${label}</small><strong>${storeName}</strong></span>
+    </span>`
+  }
+
+  return `
+    <a class="store-button" href="${href}" aria-label="Hent Tackly på ${storeName}">
+      ${isApple ? appleLogo : playLogo}
+      <span><small>${isApple ? 'Hent i' : 'Hent den på'}</small><strong>${storeName}</strong></span>
     </a>`
 }
 
@@ -72,14 +85,14 @@ document.querySelector('#app').innerHTML = `
         <a href="#fordele">Fordele</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="button button-small desktop-download" href="#download">Hent appen ${icon('arrow')}</a>
+      <a class="button button-small desktop-download" href="#download">Kommer snart ${icon('arrow')}</a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Åbn menu">${icon('menu')}</button>
     </div>
     <nav class="mobile-nav" id="mobile-menu" aria-label="Mobil navigation">
       <a href="#saadan-virker-det">Sådan virker det</a>
       <a href="#fordele">Fordele</a>
       <a href="#faq">FAQ</a>
-      <a class="button" href="#download">Hent appen</a>
+      <a class="button" href="#download">Kommer snart</a>
     </nav>
   </header>
 
@@ -92,7 +105,7 @@ document.querySelector('#app').innerHTML = `
           <h1>Giv dit rideudstyr <em>nye eventyr.</em></h1>
           <p>${description}</p>
           <div class="hero-actions">
-            <a class="button" href="#download">Hent Tackly ${icon('arrow')}</a>
+            <a class="button" href="#download">Kommer snart ${icon('arrow')}</a>
             <a class="text-link" href="#saadan-virker-det">Se hvordan det virker <span>↓</span></a>
           </div>
           <div class="hero-proof">
@@ -207,8 +220,8 @@ document.querySelector('#app').innerHTML = `
           <article class="feature-card message-card reveal reveal-delay-short">
             <div class="feature-icon">${icon('chat')}</div>
             <h3>Snak sammen i appen</h3>
-            <p>Få mål, billeder og detaljer på plads, før I laver en aftale.</p>
-            <div class="chat-demo" aria-hidden="true"><span>Hej! Hvad er bomvidden?</span><span>Den er medium – jeg sender lige et billede.</span></div>
+            <p>Få mål og detaljer på plads, før I laver en aftale.</p>
+            <div class="chat-demo" aria-hidden="true"><span>Hej! Hvad er bomvidden?</span><span>Den er medium – og kun brugt én sæson.</span></div>
           </article>
         </div>
       </div>
@@ -245,6 +258,10 @@ document.querySelector('#app').innerHTML = `
         </div>
         <div class="faq-list reveal reveal-delay-short">
           <details open>
+            <summary>Hvornår kan jeg hente Tackly?<span></span></summary>
+            <p>Tackly kommer snart til Android på Google Play, og iPhone-versionen følger derefter i App Store. Hold øje her på siden – vi opdaterer, så snart appen er klar.</p>
+          </details>
+          <details>
             <summary>Hvad kan jeg sælge på Tackly?<span></span></summary>
             <p>Alt det udstyr, der hører hestelivet til: udstyr til hest og rytter, beklædning, staldudstyr og meget mere. Det skal selvfølgelig være lovligt, ægte og beskrevet ærligt.</p>
           </details>
@@ -270,10 +287,10 @@ document.querySelector('#app').innerHTML = `
           <div class="download-decor decor-left">♞</div>
           <div class="download-decor decor-right">♡</div>
           <img src="${brandIcon}" alt="Tackly app-ikon" />
-          <span class="kicker light">Klar til næste handel?</span>
+          <span class="kicker light">Kommer snart</span>
           <h2>${tagline}</h2>
-          <p>Download Tackly, og bliv en del af Danmarks nye markedsplads for ryttere.</p>
-          <div class="store-buttons">${storeButton('apple')}${storeButton('play')}</div>
+          <p>Tackly lander først på Google Play, og derefter i App Store. Snart kan du blive en del af Danmarks nye markedsplads for ryttere.</p>
+          <div class="store-buttons">${storeButton('play')}${storeButton('apple')}</div>
         </div>
       </div>
     </section>
@@ -285,7 +302,7 @@ document.querySelector('#app').innerHTML = `
         <a class="brand" href="#top"><span class="brand-mark"><img src="${brandIcon}" alt="" /></span><span>${name}</span></a>
         <p>${tagline}.<br />Lavet med kærlighed til hestelivet.</p>
       </div>
-      <div class="footer-links"><strong>Tackly</strong><a href="#saadan-virker-det">Sådan virker det</a><a href="#fordele">Fordele</a><a href="#download">Hent appen</a></div>
+      <div class="footer-links"><strong>Tackly</strong><a href="#saadan-virker-det">Sådan virker det</a><a href="#fordele">Fordele</a><a href="#download">Appen</a></div>
       <div class="footer-links"><strong>Hjælp</strong><a href="#faq">FAQ</a><a href="mailto:${contact.email}">Kontakt os</a><a href="${links.privacy}">Privatlivspolitik</a><a href="${links.terms}">Vilkår</a><a href="${links.deleteAccount}">Slet konto</a><a href="mailto:${contact.dsaEmail}?subject=Anmeldelse%20af%20ulovligt%20indhold%20p%C3%A5%20Tackly">Anmeld ulovligt indhold</a></div>
       <div class="footer-social"><strong>Følg med</strong><div><a href="${links.instagram}" aria-label="Instagram">${icon('instagram')}</a><a href="${links.facebook}" aria-label="Facebook">${icon('facebook')}</a></div></div>
     </div>
