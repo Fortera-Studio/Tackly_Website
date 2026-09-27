@@ -89,7 +89,6 @@ document.querySelector('#app').innerHTML = `
       <div class="hero-blob hero-blob-two"></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span>${icon('sparkle')}</span> Markedspladsen for hestefolk</div>
           <h1>Giv dit rideudstyr <em>nye eventyr.</em></h1>
           <p>${description}</p>
           <div class="hero-actions">
@@ -98,7 +97,7 @@ document.querySelector('#app').innerHTML = `
           </div>
           <div class="hero-proof">
             <div class="avatar-stack" aria-hidden="true">
-              <span>🐴</span><span>🧢</span><span>🏇</span>
+              <span>${icon('heart')}</span><span>${icon('shield')}</span><span>${icon('leaf')}</span>
             </div>
             <div><strong>Lavet til ryttere</strong><small>Nemt, overskueligt og helt nede på jorden</small></div>
           </div>
@@ -114,7 +113,7 @@ document.querySelector('#app').innerHTML = `
               <span class="round-icon">${icon('heart')}</span>
             </div>
             <div class="app-content">
-              <div class="app-greeting"><small>Godmorgen 👋</small><strong>Find dit næste kup</strong></div>
+              <div class="app-greeting"><small>Godmorgen</small><strong>Find dit næste kup</strong></div>
               <div class="search-bar">${icon('search')} <span>Søg efter udstyr...</span></div>
               <div class="category-row"><span>Alt</span><span>Til hesten</span><span>Til rytteren</span></div>
               <div class="listing-head"><strong>Nyt til dig</strong><small>Se alle</small></div>
@@ -203,13 +202,13 @@ document.querySelector('#app').innerHTML = `
             <div class="feature-icon">${icon('heart')}</div>
             <h3>Et fællesskab med samme passion</h3>
             <p>Udstyr skifter hænder. Erfaringer og hesteglæde følger med.</p>
-            <div class="community-faces" aria-hidden="true"><span>🐎</span><span>✨</span><span>🏇</span><span>🤎</span><i>+</i></div>
+            <div class="community-faces" aria-hidden="true"><span>${icon('user')}</span><span>${icon('heart')}</span><span>${icon('chat')}</span><span>${icon('sparkle')}</span><i>+</i></div>
           </article>
           <article class="feature-card message-card reveal reveal-delay-short">
             <div class="feature-icon">${icon('chat')}</div>
             <h3>Snak sammen i appen</h3>
             <p>Få mål, billeder og detaljer på plads, før I laver en aftale.</p>
-            <div class="chat-demo" aria-hidden="true"><span>Hej! Hvad er bomvidden? 👋</span><span>Den er medium – jeg sender lige et billede.</span></div>
+            <div class="chat-demo" aria-hidden="true"><span>Hej! Hvad er bomvidden?</span><span>Den er medium – jeg sender lige et billede.</span></div>
           </article>
         </div>
       </div>

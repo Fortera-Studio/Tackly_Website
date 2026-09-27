@@ -194,7 +194,6 @@ a {
   padding: 46px 0 80px;
 }
 
-.eyebrow,
 .kicker {
   color: var(--primary);
   font-size: 12px;
@@ -202,30 +201,6 @@ a {
   font-weight: 800;
   letter-spacing: 1.3px;
   text-transform: uppercase;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 8px 12px 8px 8px;
-  border: 1px solid color-mix(in srgb, var(--primary) 16%, transparent);
-  border-radius: 99px;
-  background: rgba(255, 255, 255, 0.52);
-}
-
-.eyebrow span {
-  display: grid;
-  place-items: center;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  color: white;
-  background: var(--gold);
-}
-
-.eyebrow .icon {
-  width: 14px;
 }
 
 h1,
@@ -303,6 +278,7 @@ h2 em {
   place-items: center;
   border: 3px solid var(--background);
   border-radius: 50%;
+  color: var(--primary);
   background: var(--peach);
   font-size: 16px;
 }
@@ -1088,6 +1064,7 @@ h2 em {
   place-items: center;
   border: 3px solid var(--primary);
   border-radius: 50%;
+  color: var(--primary);
   background: #f0dfca;
   font-style: normal;
   font-size: 19px;
