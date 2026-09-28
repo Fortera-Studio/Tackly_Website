@@ -57,6 +57,19 @@ const playLogo = `
     <path fill="#EA4335" d="m3.6 21.8 12.3-6.5-3.1-3.3Z"/>
   </svg>`
 
+// Only networks with a real URL in config.js are shown.
+const socialLinks = () =>
+  [
+    ['instagram', 'Instagram', links.instagram],
+    ['facebook', 'Facebook', links.facebook],
+  ]
+    .filter(([, , href]) => href && !href.startsWith('#'))
+    .map(
+      ([key, label, href]) =>
+        `<a class="social-link ${key}" href="${href}" target="_blank" rel="noopener" aria-label="Tackly på ${label}">${icon(key)}</a>`,
+    )
+    .join('')
+
 const storeButton = (store) => {
   const isApple = store === 'apple'
   const storeName = isApple ? 'App Store' : 'Google Play'
@@ -91,6 +104,7 @@ document.querySelector('#app').innerHTML = `
         <a href="#fordele">Fordele</a>
         <a href="#faq">FAQ</a>
       </nav>
+      <div class="header-social">${socialLinks()}</div>
       <a class="button button-small desktop-download" href="#download">Kommer snart ${icon('arrow')}</a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Åbn menu">${icon('menu')}</button>
     </div>
@@ -144,21 +158,21 @@ document.querySelector('#app').innerHTML = `
         </div>
         <div class="steps-grid">
           <article class="step-card reveal">
-            <span class="step-number">01</span>
+            <span class="step-number">1</span>
             <div class="step-icon peach">${icon('camera')}</div>
             <h3>Opret din annonce</h3>
             <p>Tag et par billeder, beskriv dit udstyr og vælg en pris. Så er du live.</p>
             <img class="step-shot" src="${stepPhotos}" alt="Tilføj op til 5 billeder af varen" loading="lazy" />
           </article>
           <article class="step-card reveal reveal-delay-short">
-            <span class="step-number">02</span>
+            <span class="step-number">2</span>
             <div class="step-icon green">${icon('chat')}</div>
             <h3>Find det rette match</h3>
             <p>Gå på opdagelse, gem favoritter og skriv direkte med andre ryttere.</p>
             <img class="step-shot" src="${stepListings}" alt="Annoncer med pris, titel og placering" loading="lazy" />
           </article>
           <article class="step-card reveal reveal-delay">
-            <span class="step-number">03</span>
+            <span class="step-number">3</span>
             <div class="step-icon gold">${icon('sparkle')}</div>
             <h3>Gør en god handel</h3>
             <p>Vælg fast pris eller åbn for bud. Aftal detaljerne, og glæd dig til at udstyret får endnu en tur.</p>
@@ -297,7 +311,7 @@ document.querySelector('#app').innerHTML = `
       </div>
       <div class="footer-links"><strong>Tackly</strong><a href="#saadan-virker-det">Sådan virker det</a><a href="#fordele">Fordele</a><a href="#download">Appen</a></div>
       <div class="footer-links"><strong>Hjælp</strong><a href="#faq">FAQ</a><a href="mailto:${contact.email}">Kontakt os</a><a href="${links.privacy}">Privatlivspolitik</a><a href="${links.terms}">Vilkår</a><a href="${links.deleteAccount}">Slet konto</a><a href="mailto:${contact.dsaEmail}?subject=Anmeldelse%20af%20ulovligt%20indhold%20p%C3%A5%20Tackly">Anmeld ulovligt indhold</a></div>
-      <div class="footer-social"><strong>Følg med</strong><div><a href="${links.instagram}" aria-label="Instagram">${icon('instagram')}</a><a href="${links.facebook}" aria-label="Facebook">${icon('facebook')}</a></div></div>
+      <div class="footer-social"><strong>Følg med</strong><div>${socialLinks()}</div></div>
     </div>
     <div class="container footer-bottom"><span>© ${new Date().getFullYear()} ${contact.companyName}. Alle rettigheder forbeholdes.${contact.cvr ? ` CVR: ${contact.cvr}` : ''}</span><span>Skabt til livet med heste <b>♡</b></span></div>
   </footer>

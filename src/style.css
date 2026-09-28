@@ -163,6 +163,40 @@ a {
   width: 15px;
 }
 
+.header-social {
+  display: flex;
+  gap: 8px;
+  margin-right: 18px;
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: white;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.social-link .icon {
+  width: 19px;
+  height: 19px;
+}
+
+.social-link.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+.social-link.facebook {
+  background: #1877f2;
+}
+
 .menu-button,
 .mobile-nav {
   display: none;
@@ -548,10 +582,11 @@ h2 em {
 
 .step-number {
   position: absolute;
-  top: 28px;
-  right: 29px;
-  color: #cec8bd;
-  font: 700 13px/1 'Manrope', sans-serif;
+  top: 20px;
+  right: 30px;
+  color: #e6dfd3;
+  font: 800 64px/1 'Manrope', sans-serif;
+  letter-spacing: -2px;
 }
 
 .step-icon,
@@ -1397,26 +1432,6 @@ footer .brand {
   gap: 8px;
 }
 
-.footer-social a {
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  border-radius: 10px;
-  color: rgba(255, 255, 255, 0.65);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.footer-social a:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.footer-social .icon {
-  width: 16px;
-}
-
 .footer-bottom {
   padding-top: 23px;
   display: flex;
@@ -1509,6 +1524,11 @@ footer .brand {
   .desktop-nav,
   .desktop-download {
     display: none;
+  }
+
+  .header-social {
+    margin-left: auto;
+    margin-right: 10px;
   }
 
   .menu-button {
