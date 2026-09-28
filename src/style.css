@@ -166,7 +166,7 @@ a {
 .header-social {
   display: flex;
   gap: 8px;
-  margin-right: 18px;
+  margin-left: 16px;
 }
 
 .social-link {
@@ -174,7 +174,8 @@ a {
   height: 36px;
   display: grid;
   place-items: center;
-  border-radius: 10px;
+  flex: none;
+  border-radius: 50%;
   color: white;
   transition: transform 180ms ease, filter 180ms ease;
 }
@@ -582,11 +583,11 @@ h2 em {
 
 .step-number {
   position: absolute;
-  top: 20px;
+  top: 26px;
   right: 30px;
   color: #e6dfd3;
-  font: 800 64px/1 'Manrope', sans-serif;
-  letter-spacing: -2px;
+  font: 800 40px/1 'Manrope', sans-serif;
+  letter-spacing: -1px;
 }
 
 .step-icon,
@@ -1528,7 +1529,7 @@ footer .brand {
 
   .header-social {
     margin-left: auto;
-    margin-right: 10px;
+    margin-right: 16px;
   }
 
   .menu-button {

@@ -99,12 +99,12 @@ document.querySelector('#app').innerHTML = `
         <span class="brand-mark"><img src="${brandIcon}" alt="" /></span>
         <span>${name}</span>
       </a>
+      <div class="header-social">${socialLinks()}</div>
       <nav class="desktop-nav" aria-label="Primær navigation">
         <a href="#saadan-virker-det">Sådan virker det</a>
         <a href="#fordele">Fordele</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <div class="header-social">${socialLinks()}</div>
       <a class="button button-small desktop-download" href="#download">Kommer snart ${icon('arrow')}</a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Åbn menu">${icon('menu')}</button>
     </div>
