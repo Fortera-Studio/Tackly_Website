@@ -163,12 +163,6 @@ a {
   width: 15px;
 }
 
-.header-social {
-  display: flex;
-  gap: 8px;
-  margin-left: 16px;
-}
-
 .social-link {
   width: 36px;
   height: 36px;
@@ -1527,14 +1521,10 @@ footer .brand {
     display: none;
   }
 
-  .header-social {
-    margin-left: auto;
-    margin-right: 16px;
-  }
-
   .menu-button {
     width: 42px;
     height: 42px;
+    margin-left: auto;
     padding: 0;
     display: grid;
     place-items: center;

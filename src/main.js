@@ -99,7 +99,6 @@ document.querySelector('#app').innerHTML = `
         <span class="brand-mark"><img src="${brandIcon}" alt="" /></span>
         <span>${name}</span>
       </a>
-      <div class="header-social">${socialLinks()}</div>
       <nav class="desktop-nav" aria-label="Primær navigation">
         <a href="#saadan-virker-det">Sådan virker det</a>
         <a href="#fordele">Fordele</a>
