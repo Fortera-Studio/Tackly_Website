@@ -21,9 +21,9 @@ a { color: #315c4c; }
   background: rgba(247, 243, 236, 0.94);
 }
 
-.brand { display: flex; align-items: center; gap: 10px; color: #24382f; font-size: 22px; font-weight: 800; text-decoration: none; }
-.brand img { width: 48px; height: 48px; border-radius: 12px; }
-.back-link { font-weight: 700; text-decoration: none; }
+.brand { display: flex; align-items: center; gap: 8px; color: #24382f; font-family: 'Fredoka', sans-serif; font-size: 24px; font-weight: 600; letter-spacing: .01em; text-decoration: none; }
+.brand img { width: 46px; height: 46px; }
+.back-link { font-family: 'Fredoka', sans-serif; font-weight: 500; text-decoration: none; }
 
 main { max-width: 1120px; margin: 0 auto; padding: 64px 24px 84px; }
 .hero { max-width: 780px; margin-bottom: 50px; }
@@ -57,6 +57,7 @@ tr:last-child td { border-bottom: 0; }
 .button { display: inline-block; padding: 13px 18px; border-radius: 12px; color: #fff; background: #315c4c; font-weight: 800; text-decoration: none; }
 
 footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px max(24px, calc((100vw - 1120px) / 2)); border-top: 1px solid #e5dfd5; color: #69736e; font-size: 14px; }
+footer a { font-family: 'Fredoka', sans-serif; font-weight: 500; }
 
 @media (max-width: 760px) {
   .site-header { min-height: 66px; }

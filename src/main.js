@@ -1,4 +1,6 @@
 import '@fontsource/dm-sans/latin-400.css'
+import '@fontsource/fredoka/latin-500.css'
+import '@fontsource/fredoka/latin-600.css'
 import '@fontsource/dm-sans/latin-500.css'
 import '@fontsource/dm-sans/latin-600.css'
 import '@fontsource/dm-sans/latin-700.css'
@@ -7,7 +9,8 @@ import '@fontsource/manrope/latin-600.css'
 import '@fontsource/manrope/latin-700.css'
 import '@fontsource/manrope/latin-800.css'
 import './style.css'
-import brandIcon from './assets/android-icon-equilo.png'
+import brandIcon from './assets/app-icon.png'
+import logoMark from './assets/logo-mark.png'
 import browseScreen from './assets/screens/browse.jpg'
 import stepPhotos from './assets/screens/step-photos.jpg'
 import stepListings from './assets/screens/step-listings.jpg'
@@ -96,7 +99,7 @@ document.querySelector('#app').innerHTML = `
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#top" aria-label="${name} – gå til toppen">
-        <span class="brand-mark"><img src="${brandIcon}" alt="" /></span>
+        <img class="logo-mark" src="${logoMark}" alt="" />
         <span>${name}</span>
       </a>
       <nav class="desktop-nav" aria-label="Primær navigation">

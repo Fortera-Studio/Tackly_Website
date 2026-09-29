@@ -1,5 +1,7 @@
+import '@fontsource/fredoka/latin-500.css'
+import '@fontsource/fredoka/latin-600.css'
 import './legal.css'
-import logoUrl from './assets/android-icon-equilo.png'
+import logoUrl from './assets/logo-mark.png'
 import { siteConfig } from './config.js'
 
 const documentVersion = '2026-08-07'
