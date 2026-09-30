@@ -68,23 +68,6 @@ a {
   flex: none;
 }
 
-.site-header {
-  position: fixed;
-  z-index: 100;
-  inset: 0 0 auto;
-  background: color-mix(in srgb, var(--background) 88%, transparent);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid color-mix(in srgb, var(--border) 76%, transparent);
-}
-
-.nav-wrap {
-  height: 78px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .brand {
   display: inline-flex;
   align-items: center;
@@ -93,15 +76,6 @@ a {
   color: var(--primary-dark);
   font: 600 26px/1 var(--brand-font);
   letter-spacing: 0.2px;
-}
-
-.logo-mark {
-  width: 46px;
-  height: 46px;
-}
-
-.site-header .brand {
-  gap: 8px;
 }
 
 .brand-mark {
@@ -164,8 +138,8 @@ a {
 }
 
 .site-header .button {
-  font-family: var(--brand-font);
-  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
 }
 
 .button-small {
@@ -1518,10 +1492,6 @@ footer .brand {
 @media (max-width: 760px) {
   :root {
     --page-padding: 20px;
-  }
-
-  .nav-wrap {
-    height: 68px;
   }
 
   .brand {

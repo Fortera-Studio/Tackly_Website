@@ -1,8 +1,8 @@
 import '@fontsource/fredoka/latin-500.css'
 import '@fontsource/fredoka/latin-600.css'
 import './legal.css'
-import logoUrl from './assets/logo-mark.png'
 import { siteConfig } from './config.js'
+import { siteHeader } from './site-header.js'
 
 const documentVersion = '2026-08-07'
 const updated = '7. august 2026'
@@ -274,13 +274,11 @@ const pageLinks = [
 ]
 
 document.querySelector('#app').innerHTML = `
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="Til Tacklys forside">
-      <img src="${logoUrl}" alt="" />
-      <span>Tackly</span>
-    </a>
-    <a class="back-link" href="/">Til forsiden</a>
-  </header>
+  ${siteHeader({
+    brandHref: '/',
+    brandLabel: 'Til Tacklys forside',
+    right: '<a class="header-link" href="/">Til forsiden</a>',
+  })}
   <main>
     <div class="hero">
       <p class="eyebrow">${page.eyebrow}</p>

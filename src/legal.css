@@ -11,21 +11,8 @@ body { margin: 0; line-height: 1.65; }
 
 a { color: #315c4c; }
 
-.site-header {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px max(24px, calc((100vw - 1120px) / 2));
-  border-bottom: 1px solid #e5dfd5;
-  background: rgba(247, 243, 236, 0.94);
-}
-
-.brand { display: flex; align-items: center; gap: 8px; color: #24382f; font-family: 'Fredoka', sans-serif; font-size: 24px; font-weight: 600; letter-spacing: .01em; text-decoration: none; }
-.brand img { width: 46px; height: 46px; }
-.back-link { font-family: 'Fredoka', sans-serif; font-weight: 500; text-decoration: none; }
-
-main { max-width: 1120px; margin: 0 auto; padding: 64px 24px 84px; }
+/* The shared header is fixed, so leave room for it */
+main { max-width: 1120px; margin: 0 auto; padding: 142px 24px 84px; }
 .hero { max-width: 780px; margin-bottom: 50px; }
 .eyebrow { margin: 0 0 10px; color: #315c4c; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 h1 { margin: 0; color: #24382f; font-size: clamp(38px, 7vw, 64px); line-height: 1.05; letter-spacing: -.035em; }
@@ -33,7 +20,7 @@ h1 { margin: 0; color: #24382f; font-size: clamp(38px, 7vw, 64px); line-height: 
 .updated { color: #69736e; font-size: 14px; }
 
 .legal-layout { display: grid; grid-template-columns: 220px minmax(0, 760px); gap: 54px; align-items: start; }
-nav { position: sticky; top: 24px; display: grid; overflow: hidden; border: 1px solid #e5dfd5; border-radius: 16px; background: #fff; }
+nav { position: sticky; top: 102px; display: grid; overflow: hidden; border: 1px solid #e5dfd5; border-radius: 16px; background: #fff; }
 nav a { padding: 14px 16px; border-bottom: 1px solid #e5dfd5; color: #69736e; font-size: 14px; font-weight: 700; text-decoration: none; }
 nav a:last-child { border-bottom: 0; }
 nav a.active { color: #24382f; background: #dde8e2; }
@@ -60,9 +47,7 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px
 footer a { font-family: 'Fredoka', sans-serif; font-weight: 500; }
 
 @media (max-width: 760px) {
-  .site-header { min-height: 66px; }
-  .brand img { width: 42px; height: 42px; }
-  main { padding-top: 42px; }
+  main { padding-top: 110px; }
   .hero { margin-bottom: 30px; }
   .legal-layout { grid-template-columns: 1fr; gap: 24px; }
   nav { position: static; }

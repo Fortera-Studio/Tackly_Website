@@ -10,13 +10,13 @@ import '@fontsource/manrope/latin-700.css'
 import '@fontsource/manrope/latin-800.css'
 import './style.css'
 import brandIcon from './assets/app-icon.png'
-import logoMark from './assets/logo-mark.png'
 import browseScreen from './assets/screens/browse.jpg'
 import stepPhotos from './assets/screens/step-photos.jpg'
 import stepListings from './assets/screens/step-listings.jpg'
 import stepOffers from './assets/screens/step-offers.jpg'
 import chatThumb from './assets/screens/chat-thumb.jpg'
 import { siteConfig } from './config.js'
+import { siteHeader } from './site-header.js'
 
 const { name, tagline, description, links, contact, colors } = siteConfig
 
@@ -96,27 +96,25 @@ const storeButton = (store) => {
 }
 
 document.querySelector('#app').innerHTML = `
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="${name} – gå til toppen">
-        <img class="logo-mark" src="${logoMark}" alt="" />
-        <span>${name}</span>
-      </a>
+  ${siteHeader({
+    brandHref: '#top',
+    brandLabel: `${name} – gå til toppen`,
+    right: `
       <nav class="desktop-nav" aria-label="Primær navigation">
         <a href="#saadan-virker-det">Sådan virker det</a>
         <a href="#fordele">Fordele</a>
         <a href="#faq">FAQ</a>
       </nav>
       <a class="button button-small desktop-download" href="#download">Kommer snart ${icon('arrow')}</a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Åbn menu">${icon('menu')}</button>
-    </div>
-    <nav class="mobile-nav" id="mobile-menu" aria-label="Mobil navigation">
-      <a href="#saadan-virker-det">Sådan virker det</a>
-      <a href="#fordele">Fordele</a>
-      <a href="#faq">FAQ</a>
-      <a class="button" href="#download">Kommer snart</a>
-    </nav>
-  </header>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Åbn menu">${icon('menu')}</button>`,
+    below: `
+      <nav class="mobile-nav" id="mobile-menu" aria-label="Mobil navigation">
+        <a href="#saadan-virker-det">Sådan virker det</a>
+        <a href="#fordele">Fordele</a>
+        <a href="#faq">FAQ</a>
+        <a class="button" href="#download">Kommer snart</a>
+      </nav>`,
+  })}
 
   <main id="top">
     <section class="hero-section">

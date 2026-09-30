@@ -1,0 +1,225 @@
+/*
+ * Header shared by the landing page and the legal pages. Everything that
+ * decides where the logo and leaves sit lives here, so both pages match.
+ */
+.site-header {
+  --header-gutter: 28px;
+  position: fixed;
+  z-index: 100;
+  inset: 0 0 auto;
+  background: rgba(247, 243, 236, 0.62);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* Thin line under the header */
+.site-header::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: rgba(229, 223, 213, 0.76);
+  pointer-events: none;
+}
+
+.nav-wrap {
+  position: relative;
+  width: min(1180px, calc(100% - var(--header-gutter) * 2));
+  height: 78px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header .brand {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #24382f;
+  font: 600 26px/1 'Fredoka', 'DM Sans', sans-serif;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+}
+
+.site-header .logo-mark {
+  width: 50px;
+  height: 50px;
+}
+
+.header-link {
+  position: relative;
+  color: #315c4c;
+  font: 500 15px/1 'Fredoka', 'DM Sans', sans-serif;
+  text-decoration: none;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+/* Keep links and buttons above the leaves */
+.nav-wrap > :not(.header-decor) {
+  position: relative;
+}
+
+.header-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sprig {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.sprig-left {
+  left: -88px;
+  width: 54px;
+}
+
+.sprig-right {
+  right: -88px;
+  width: 54px;
+}
+
+.sprig-fern {
+  left: 25%;
+  width: 44px;
+  opacity: 0.75;
+}
+
+.sprig-eucalyptus {
+  left: 32%;
+  width: 58px;
+  height: 50px;
+  opacity: 0.8;
+}
+
+.sprig-mid {
+  left: 44%;
+  width: 60px;
+  opacity: 0.7;
+}
+
+.sprig-leaf {
+  top: auto;
+  bottom: 0;
+  left: 51%;
+  width: 24px;
+  height: 36px;
+  opacity: 0.3;
+}
+
+/* Small sprigs growing up from the bottom edge */
+.sprig-grass {
+  top: auto;
+  bottom: 0;
+  width: 22px;
+  height: 30px;
+  opacity: 0.75;
+}
+
+.grass-logo {
+  left: 16%;
+}
+
+/* Tucked between the last link and the button, just behind the button */
+.grass-button {
+  left: 84.5%;
+  height: 26px;
+  opacity: 0.6;
+}
+
+/* Between the button and the outer right sprig */
+.grass-outer {
+  right: -40px;
+  height: 34px;
+}
+
+.gold-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #d9a441;
+  opacity: 0.7;
+}
+
+.dot-one {
+  top: 18px;
+  left: 21%;
+}
+
+.dot-two {
+  top: 58px;
+  left: 38%;
+  width: 3px;
+  height: 3px;
+}
+
+.dot-three {
+  top: 14px;
+  left: 55%;
+  width: 3px;
+  height: 3px;
+}
+
+/* No room beside the content: drop the outer sprigs */
+@media (max-width: 1370px) {
+  .sprig-left,
+  .sprig-right,
+  .grass-outer {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .sprig-leaf,
+  .grass-logo {
+    display: none;
+  }
+}
+
+/* The nav links move left on smaller screens, so keep only the dots */
+@media (max-width: 1000px) {
+  .sprig-fern,
+  .sprig-eucalyptus,
+  .sprig-mid,
+  .grass-button,
+  .dot-three {
+    display: none;
+  }
+
+  .dot-one {
+    left: 52%;
+  }
+
+  .dot-two {
+    top: 50px;
+    left: 64%;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    --header-gutter: 20px;
+  }
+
+  .nav-wrap {
+    height: 68px;
+  }
+
+  .site-header .brand {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    --header-gutter: 16px;
+  }
+}
