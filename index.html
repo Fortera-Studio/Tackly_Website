@@ -2,8 +2,10 @@
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" sizes="256x256" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+    <link rel="apple-touch-icon" href="/favicon-192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#315C4C" />
     <meta name="description" content="Tackly er den danske markedsplads for ryttere. Køb og sælg rideudstyr nemt og med god samvittighed." />
@@ -20,6 +22,44 @@
     <meta property="og:image:alt" content="Tackly – Giv dit rideudstyr nye eventyr" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>Tackly – Giv dit rideudstyr nye eventyr</title>
+    <link rel="canonical" href="https://www.tackly.dk/" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.tackly.dk/#website",
+            "name": "Tackly",
+            "alternateName": "tackly.dk",
+            "url": "https://www.tackly.dk/",
+            "inLanguage": "da-DK"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.tackly.dk/#organization",
+            "name": "Tackly",
+            "url": "https://www.tackly.dk/",
+            "logo": "https://www.tackly.dk/favicon-192.png",
+            "email": "hej@tackly.dk",
+            "sameAs": [
+              "https://www.instagram.com/tackly.dk/",
+              "https://play.google.com/store/apps/details?id=dk.equilo.app"
+            ]
+          },
+          {
+            "@type": "MobileApplication",
+            "name": "Tackly",
+            "operatingSystem": "Android",
+            "applicationCategory": "ShoppingApplication",
+            "url": "https://play.google.com/store/apps/details?id=dk.equilo.app",
+            "installUrl": "https://play.google.com/store/apps/details?id=dk.equilo.app",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "DKK" },
+            "publisher": { "@id": "https://www.tackly.dk/#organization" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>

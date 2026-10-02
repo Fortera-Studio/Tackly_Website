@@ -89,7 +89,7 @@ const storeButton = (store) => {
   }
 
   return `
-    <a class="store-button" href="${href}" aria-label="Hent Tackly på ${storeName}">
+    <a class="store-button" href="${href}" target="_blank" rel="noopener" aria-label="Hent Tackly på ${storeName}">
       ${isApple ? appleLogo : playLogo}
       <span><small>${isApple ? 'Hent i' : 'Hent den på'}</small><strong>${storeName}</strong></span>
     </a>`
@@ -105,14 +105,14 @@ document.querySelector('#app').innerHTML = `
         <a href="#fordele">Fordele</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="button button-small desktop-download" href="#download">Kommer snart ${icon('arrow')}</a>
+      <a class="button button-small desktop-download" href="#download">Hent appen ${icon('arrow')}</a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Åbn menu">${icon('menu')}</button>`,
     below: `
       <nav class="mobile-nav" id="mobile-menu" aria-label="Mobil navigation">
         <a href="#saadan-virker-det">Sådan virker det</a>
         <a href="#fordele">Fordele</a>
         <a href="#faq">FAQ</a>
-        <a class="button" href="#download">Kommer snart</a>
+        <a class="button" href="#download">Hent appen</a>
       </nav>`,
   })}
 
@@ -125,7 +125,7 @@ document.querySelector('#app').innerHTML = `
           <h1>Giv dit rideudstyr <em>nye eventyr.</em></h1>
           <p>${description}</p>
           <div class="hero-actions">
-            <a class="button" href="#download">Kommer snart ${icon('arrow')}</a>
+            <a class="button" href="#download">Hent appen ${icon('arrow')}</a>
             <a class="text-link" href="#saadan-virker-det">Se hvordan det virker <span>↓</span></a>
           </div>
           <div class="hero-proof">
@@ -266,7 +266,7 @@ document.querySelector('#app').innerHTML = `
         <div class="faq-list reveal reveal-delay-short">
           <details open>
             <summary>Hvornår kan jeg hente Tackly?<span></span></summary>
-            <p>Tackly kommer snart til Android på Google Play, og iPhone-versionen følger derefter i App Store. Hold øje her på siden – vi opdaterer, så snart appen er klar.</p>
+            <p>Tackly er ude nu til Android på Google Play. iPhone-versionen er på vej til App Store – hold øje her på siden, vi opdaterer, så snart den er klar.</p>
           </details>
           <details>
             <summary>Hvad kan jeg sælge på Tackly?<span></span></summary>
@@ -294,9 +294,9 @@ document.querySelector('#app').innerHTML = `
           <div class="download-decor decor-left">♞</div>
           <div class="download-decor decor-right">♡</div>
           <img src="${brandIcon}" alt="Tackly app-ikon" />
-          <span class="kicker light">Kommer snart</span>
+          <span class="kicker light">Ude nu</span>
           <h2>${tagline}</h2>
-          <p>Tackly lander først på Google Play, og derefter i App Store. Snart kan du blive en del af Danmarks nye markedsplads for ryttere.</p>
+          <p>Hent Tackly gratis på Google Play og bliv en del af Danmarks nye markedsplads for ryttere. iPhone-versionen følger snart i App Store.</p>
           <div class="store-buttons">${storeButton('play')}${storeButton('apple')}</div>
         </div>
       </div>

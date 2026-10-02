@@ -12,7 +12,7 @@ export const siteConfig = {
 
   links: {
     appStore: '#download', // Replace with the final App Store URL
-    googlePlay: '#download', // Replace with the final Google Play URL
+    googlePlay: 'https://play.google.com/store/apps/details?id=dk.equilo.app',
     instagram: 'https://www.instagram.com/tackly.dk/',
     facebook: '#', // Replace with the Tackly Facebook URL
     privacy: '/privacy/',
