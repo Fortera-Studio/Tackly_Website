@@ -73,24 +73,29 @@ const socialLinks = () =>
     )
     .join('')
 
-const storeButton = (store) => {
+// `inNav`: the smaller header version, where a "coming soon" button jumps
+// down to the download section instead of being a dead badge.
+const storeButton = (store, { inNav = false } = {}) => {
   const isApple = store === 'apple'
   const storeName = isApple ? 'App Store' : 'Google Play'
   const href = isApple ? links.appStore : links.googlePlay
+  const logo = isApple ? appleLogo : playLogo
+  const navClass = inNav ? ' nav-store' : ''
 
   // Until a real store URL is set in config.js, show the button as "coming soon".
   if (href.startsWith('#')) {
     const label = isApple ? 'Kommer senere til' : 'Kommer snart til'
+    const tag = inNav ? 'a' : 'span'
     return `
-    <span class="store-button is-soon" aria-label="Tackly ${label.toLowerCase()} ${storeName}">
-      ${isApple ? appleLogo : playLogo}
+    <${tag} class="store-button is-soon${navClass}"${inNav ? ' href="#download"' : ''} aria-label="Tackly ${label.toLowerCase()} ${storeName}">
+      ${logo}
       <span><small>${label}</small><strong>${storeName}</strong></span>
-    </span>`
+    </${tag}>`
   }
 
   return `
-    <a class="store-button" href="${href}" target="_blank" rel="noopener" aria-label="Hent Tackly på ${storeName}">
-      ${isApple ? appleLogo : playLogo}
+    <a class="store-button${navClass}" href="${href}" target="_blank" rel="noopener" aria-label="Hent Tackly på ${storeName}">
+      ${logo}
       <span><small>${isApple ? 'Hent i' : 'Hent den på'}</small><strong>${storeName}</strong></span>
     </a>`
 }
@@ -105,14 +110,14 @@ document.querySelector('#app').innerHTML = `
         <a href="#fordele">Fordele</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="button button-small desktop-download" href="#download">Hent appen ${icon('arrow')}</a>
+      <div class="nav-stores desktop-download">${storeButton('play', { inNav: true })}${storeButton('apple', { inNav: true })}</div>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Åbn menu">${icon('menu')}</button>`,
     below: `
       <nav class="mobile-nav" id="mobile-menu" aria-label="Mobil navigation">
         <a href="#saadan-virker-det">Sådan virker det</a>
         <a href="#fordele">Fordele</a>
         <a href="#faq">FAQ</a>
-        <a class="button" href="#download">Hent appen</a>
+        <div class="nav-stores">${storeButton('play', { inNav: true })}${storeButton('apple', { inNav: true })}</div>
       </nav>`,
   })}
 
@@ -125,7 +130,7 @@ document.querySelector('#app').innerHTML = `
           <h1>Giv dit rideudstyr <em>nye eventyr.</em></h1>
           <p>${description}</p>
           <div class="hero-actions">
-            <a class="button" href="#download">Hent appen ${icon('arrow')}</a>
+            <a class="button hero-download" href="#download">Hent appen ${icon('arrow')}</a>
             <a class="text-link" href="#saadan-virker-det">Se hvordan det virker <span>↓</span></a>
           </div>
           <div class="hero-proof">
@@ -316,6 +321,20 @@ document.querySelector('#app').innerHTML = `
     <div class="container footer-bottom"><span>© ${new Date().getFullYear()} ${contact.companyName}. Alle rettigheder forbeholdes.${contact.cvr ? ` CVR: ${contact.cvr}` : ''}</span><span>Skabt til livet med heste <b>♡</b></span></div>
   </footer>
 `
+
+// On Android, open the Play Store app directly instead of the web listing.
+// The intent falls back to the normal web page if the Play Store is missing.
+// (App Store links need nothing extra: iOS opens apps.apple.com in the app.)
+// The hero button skips the download section there too, since Android users
+// have only one store to pick.
+if (/Android/i.test(navigator.userAgent) && !links.googlePlay.startsWith('#')) {
+  const playUrl = new URL(links.googlePlay)
+  const intentUrl = `intent://details?id=${playUrl.searchParams.get('id')}#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=${encodeURIComponent(playUrl.href)};end`
+  document.querySelectorAll(`a[href="${links.googlePlay}"], .hero-download`).forEach((link) => {
+    link.href = intentUrl
+    link.removeAttribute('target')
+  })
+}
 
 const menuButton = document.querySelector('.menu-button')
 const mobileMenu = document.querySelector('.mobile-nav')

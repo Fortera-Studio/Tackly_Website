@@ -1343,6 +1343,45 @@ h2 em {
   line-height: 1.2;
 }
 
+/* Smaller store badges in the header */
+.nav-stores {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.store-button.nav-store {
+  min-width: 0;
+  height: 42px;
+  padding: 0 13px 0 11px;
+  gap: 8px;
+  border-radius: 11px;
+  box-shadow: 0 6px 16px rgba(24, 35, 30, 0.16);
+}
+
+.nav-store .store-logo {
+  width: 20px;
+  height: 20px;
+}
+
+.nav-store small {
+  font-size: 7.5px;
+}
+
+.nav-store strong {
+  font-size: 13px;
+}
+
+/* The header's "coming soon" badge still links to the download section */
+.store-button.is-soon.nav-store {
+  cursor: pointer;
+}
+
+.store-button.is-soon.nav-store:hover {
+  background: #101713;
+  transform: translateY(-2px);
+}
+
 .download-decor {
   position: absolute;
   z-index: 0 !important;
@@ -1489,6 +1528,12 @@ footer .brand {
   }
 }
 
+@media (max-width: 900px) {
+  .desktop-download .store-button.is-soon {
+    display: none;
+  }
+}
+
 @media (max-width: 760px) {
   :root {
     --page-padding: 20px;
@@ -1544,8 +1589,15 @@ footer .brand {
     text-decoration: none;
   }
 
-  .mobile-nav .button {
-    margin-top: 6px;
+  .mobile-nav .nav-stores {
+    margin-top: 8px;
+  }
+
+  .mobile-nav .nav-store {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    height: 50px;
   }
 
   .hero-section {

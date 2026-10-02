@@ -127,9 +127,9 @@
   left: 16%;
 }
 
-/* Tucked between the last link and the button, just behind the button */
+/* Tucked between the last link and the store badges */
 .grass-button {
-  left: 84.5%;
+  right: 264px;
   height: 26px;
   opacity: 0.6;
 }
@@ -179,6 +179,7 @@
 
 @media (max-width: 1200px) {
   .sprig-leaf,
+  .sprig-mid,
   .grass-logo {
     display: none;
   }
