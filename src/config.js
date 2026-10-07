@@ -25,9 +25,10 @@ export const siteConfig = {
     supportEmail: 'support@tackly.dk',
     privacyEmail: 'support@tackly.dk',
     dsaEmail: 'support@tackly.dk',
-    companyName: 'Fortera Studio',
-    address: 'Cikoriegade, Nærheden, 2640 Hedehusene, Danmark',
-    cvr: '', // Required if the operator is registered in CVR
+    companyName: 'Fortera Studio I/S',
+    companyWebsite: 'https://fortera-studio-website.pages.dev/',
+    address: '', // Left out on purpose; the registered address is public in CVR
+    cvr: '46817338',
     phone: '', // Add if this is the normal direct contact channel
   },
 

@@ -15,7 +15,8 @@ const operatorDetails = `
   <dl class="details-list">
     <div><dt>Dataansvarlig og tjenesteudbyder</dt><dd>${contact.companyName}</dd></div>
     ${contact.address ? `<div><dt>Adresse</dt><dd>${contact.address}</dd></div>` : ''}
-    ${contact.cvr ? `<div><dt>CVR</dt><dd>${contact.cvr}</dd></div>` : ''}
+    ${contact.cvr ? `<div><dt>CVR</dt><dd><a href="https://datacvr.virk.dk/enhed/virksomhed/${contact.cvr}" rel="noopener noreferrer">${contact.cvr}</a></dd></div>` : ''}
+    ${contact.companyWebsite ? `<div><dt>Virksomhed</dt><dd><a href="${contact.companyWebsite}" rel="noopener noreferrer">${contact.companyWebsite.replace(/^https:\/\/|\/$/g, '')}</a></dd></div>` : ''}
     ${contact.phone ? `<div><dt>Telefon</dt><dd>${contact.phone}</dd></div>` : ''}
     <div><dt>E-mail</dt><dd>${mailLink(contact.email)}</dd></div>
     <div><dt>Support og privatliv</dt><dd>${mailLink(contact.supportEmail)}</dd></div>
@@ -25,8 +26,8 @@ const pages = {
   privacy: {
     // Dated on its own; the terms keep the shared version that the app
     // records when users accept them.
-    updated: '25. september 2026',
-    version: '2026-09-25',
+    updated: '8. oktober 2026',
+    version: '2026-10-08',
     eyebrow: 'Jura og privatliv',
     title: 'Privatlivspolitik',
     intro: 'Her kan du se, hvilke personoplysninger Tackly behandler, hvorfor vi gør det, hvem oplysningerne deles med, og hvilke rettigheder du har.',
@@ -42,14 +43,14 @@ const pages = {
         body: `
           <p>Afhængigt af hvordan du bruger Tackly, behandler vi følgende kategorier:</p>
           <ul>
-            <li><strong>Konto og login:</strong> e-mailadresse, bruger-id og loginoplysninger, som håndteres sikkert af Supabase. Tackly kan ikke se din adgangskode i klartekst. Hvis du vælger Google-login, modtager vi navn, e-mail, profilbillede og de identifikatorer Google stiller til rådighed.</li>
+            <li><strong>Konto og login:</strong> e-mailadresse, bruger-id og loginoplysninger, som håndteres sikkert af Supabase. Tackly kan ikke se din adgangskode i klartekst. Hvis du vælger Google-login, modtager vi navn, e-mail, profilbillede og de identifikatorer Google stiller til rådighed. Hvis du vælger Log ind med Apple, modtager vi en bruger-id fra Apple, din e-mailadresse (eller en anonym videresendelsesadresse, hvis du vælger at skjule din e-mail) og dit navn, hvis du deler det.</li>
             <li><strong>Profil:</strong> vist navn, profilbillede, profiltekst og valgfrit postområde/by.</li>
             <li><strong>Annoncer:</strong> billeder, titel, beskrivelse, kategori, produktoplysninger, stand, pris, postområde/by og annoncestatus.</li>
             <li><strong>Brug af markedspladsen:</strong> favoritter, samtaler, beskeder, bud, købsanmodninger, reservationer, markering som solgt, anmeldelser og blokeringer.</li>
             <li><strong>Support og sikkerhed:</strong> supportsager, rapporter om indhold eller brugere, den relevante samtale- eller annoncekontekst, advarsler, moderationsafgørelser og interne noter.</li>
             <li><strong>Tekniske oplysninger:</strong> IP-adresse og nødvendige serverlogs hos vores leverandører, enhedsplatform, push-token, sessionsoplysninger samt dato og version for din accept af vilkårene.</li>
           </ul>
-          <p>Vi modtager normalt oplysningerne fra dig. Loginoplysninger kan også komme fra Google, hvis du vælger Google-login. Oplysninger om rapporteret indhold kan komme fra en anden bruger.</p>
+          <p>Vi modtager normalt oplysningerne fra dig. Loginoplysninger kan også komme fra Google eller Apple, hvis du vælger at logge ind med en af dem. Oplysninger om rapporteret indhold kan komme fra en anden bruger.</p>
           <p>Appen bruger ikke din enheds præcise GPS-position. Afstandsfiltret bruger det postområde, du selv skriver eller vælger, og vi gemmer postområdets midtpunkt sammen med annoncen, så afstanden kan beregnes. Du vælger også selv, hvilke billeder appen får adgang til, uploader eller tager med kameraet.</p>
           <p>Tackly er ikke beregnet til følsomme personoplysninger. Del ikke helbredsoplysninger, CPR-numre, betalingskortoplysninger eller andre fortrolige oplysninger i profiler, annoncer, support eller beskeder.</p>`,
       },
@@ -87,7 +88,7 @@ const pages = {
             <li><strong>Vercel</strong> hoster tackly.dk og kan behandle IP-adresse, tidspunkt, den besøgte adresse og nødvendige tekniske logs for at levere og beskytte hjemmesiden.</li>
             <li><strong>Expo og Google Firebase Cloud Messaging</strong> formidler pushnotifikationer til din enhed. En notifikation om en ny besked viser afsenderens navn, annoncens titel og begyndelsen af beskeden (højst 140 tegn). Du kan til enhver tid slå notifikationer fra i telefonens indstillinger.</li>
             <li><strong>Google</strong> behandler oplysninger, hvis du selv vælger Google-login.</li>
-            <li><strong>Dataforsyningen (DAWA)</strong> modtager søgetekst og tekniske forbindelsesoplysninger, når appen slår danske postområder op. Vi sender ikke din konto-id med forespørgslen.</li>
+            <li><strong>Apple</strong> behandler oplysninger, hvis du selv vælger Log ind med Apple. Hvis du skjuler din e-mail, videresender Apple beskeder fra os til din rigtige adresse.</li>
             <li><strong>Rådgivere og myndigheder</strong> kan modtage oplysninger, når det er nødvendigt for et retskrav eller følger af loven.</li>
           </ul>
           <p>Autoriserede Tackly-administratorer og moderatorer har kun adgang i det omfang, deres opgaver kræver det. Vi sælger ikke dine personoplysninger og bruger dem ikke til tredjepartsannoncering.</p>`,
